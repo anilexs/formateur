@@ -350,3 +350,136 @@
 // var note = 14;
 // var message = (note>15) ?"bien !":"mauvais";
 // console.log(message);
+
+
+
+// class Cercle{
+//     constructor (rayon){
+//     this.rayon = rayon;
+//     }
+    
+//     calculerSurface(){
+//         let cal = Math.PI * this.rayon * this.rayon;
+//         return cal;
+//     }
+//     afficherInfo(){
+//         console.log(this.calculerSurface());
+//     }
+// }
+
+// let afichager = new Cercle(50)
+// afichager.afficherInfo();
+
+// // creer la classe Cercle
+// class Cercle{
+//     // on declare le constructeur de la classe qui prend un parametre qui est le rayon
+//     constructor(r) { 
+//         this.rayon = r;
+//     }
+
+ 
+
+//     // declarer les methodes calculerSurface et afficherInfo
+//     calculerSurface() {
+//         // calculer la suface
+//         let surface = Math.PI * Math.pow(this.rayon, 2);
+//         return surface;
+//     }
+
+ 
+
+//     afficherInfo() {
+//         // afficher les informations du cercle
+//         console.log("le cercle a un rayon de " + this.rayon + " est une surface de " + this.calculerSurface());
+//         // this.calculerSurface() retourne la valeur surface
+
+ 
+
+//         // console.log("le cercle a un rayon de " + this.rayon + " est une surface de " + Math.ceil(this.calculerSurface()));
+//     }
+// }
+
+ 
+
+// let c = new Cercle(2); // instancier un objet cercle = Creer un objet Cercle
+// c.afficherInfo();
+
+
+// class CompteBancaire{
+//     constructor(titulaire, solde){
+//         this.titulaire = titulaire;
+//         this.solde = solde;
+//     }   
+
+//     retirer(montant){
+//         this.solde -= montant
+//         // this.solde = this.solde - montant
+//     }
+//     deposer(montant){
+//         this.solde +=  montant
+//         // this.solde = this.solde + montant
+//     }
+
+//     afficherSolde(){
+//         console.log(this.solde);
+//     }
+
+// }
+
+// let p1 = new CompteBancaire("abraham", 5);
+// p1.deposer(10);
+// p1.retirer(7);
+// p1.afficherSolde(); 
+
+
+
+
+
+// // class CompteBancaire
+// class CompteBancaire{
+//     // le constructeur prend 2 params: le titulaire => t et le solde => s
+//     constructor(t, s) { 
+//         this.titulaire = t;
+//         this.solde = s;
+//     }
+
+ 
+
+//     // declarer les methode deposer, retirer et afficherSolde
+//     deposer(montant) { // deposer prend un param : montant
+//         this.solde += montant;
+//         // this.solde = this.solde + montant;
+//     }
+
+ 
+
+//     retirer(montant) {
+//         this.solde -= montant;
+//         // this.solde = this.solde - montant;
+//     }
+
+ 
+
+//     afficherSolde() {
+//         console.log("le solde de votre compte est de: "+this.solde+ " €");
+//     }
+// }
+// // instancier un objet CompteBancaire
+// let compte = new CompteBancaire("Wassila", 80000);
+// compte.deposer(100000);
+// compte.retirer(50000);
+// compte.afficherSolde();
+
+// 
+
+var element = document.querySelectorAll(`h1`);
+element[0].classList.add("red");
+console.log(element[0].className);
+
+var elementP = document.querySelector("p[class='content']");
+elementP.className = "blue";
+console.log(elementP.className);
+
+var elementBtn = document.getElementById("btn");
+elementBtn.className = "bouton";
+console.log(elementBtn.className);
