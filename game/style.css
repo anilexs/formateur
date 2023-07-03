@@ -1,0 +1,121 @@
+#container{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+#title h1{
+    text-align: center;
+}
+
+#choice{
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+}
+
+select{
+    height: 40px;
+    width: 100%;
+    padding-left: 10px;
+}
+#new-game-btn{
+    height: 50px;
+    width: 100%;
+}
+#validation{
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+}
+#pawn-box{
+    margin-top: 20px;
+    padding-top: 10px;
+    width: 300px;
+    height: 175px;
+    box-shadow: 1px 1px 6px 1px grey;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border: solid 2px black;
+    margin-left: auto;
+    margin-right: auto;
+}
+.pawn{
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    margin-top: 8px;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+#activePawn{
+    box-shadow: 0px 1px 10px 10px;
+}
+#innactivePawn{
+    box-shadow: none;
+}
+
+#gaming{
+    margin-top: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 300px;
+}
+#grid-game{
+    width: 300px;
+    border-radius: 15px;
+    padding-bottom: 15px;
+    padding-top: 1px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.grid-game-row{
+    height: 50px;
+    /* width: 50%; */
+    background-color: grey;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 8px;
+    opacity: 0.6;
+    margin-left: auto;
+    margin-right: auto;
+}
+.pawn-container{
+    margin-top: 2px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: white;
+    border: solid 1px black;
+}
+.grid-game-row-left{
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+}
+.grid-game-row-rigth{
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+.position-check{
+    height: 12px;
+    width: 12px;
+    background-color: white;
+    border-radius: 50%;
+    margin-top: 5px;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+#play_btn{
+    height: 45px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
