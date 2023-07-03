@@ -120,7 +120,7 @@ bouton.addEventListener('click', () => {
     div.addEventListener('click', () => {
         var random = Math.floor(Math.random()*11);
         console.log(random);
-        var color = ["White", "Red","Yellow","Orange","Pink","Green","Blue","Purple","Gold","Silver"]
+            
         div.style.color = color[random];
 
 
