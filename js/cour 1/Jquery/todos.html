@@ -5,23 +5,76 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/todos.css">
-    <script src="js/todos.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Document</title>
 </head>
 <body>
     <div class="form">
         <input id="txt" type="text" placeholder="entrez une todo"><br>
+
         <input id="valider" type="submit" value="valider">
     </div>  
 
     <h2 style="text-align: center;" id="texth2">Liste des todos</h2>
     <div id="listTodo">
+        <span class="Pourcentage">Pourcentage de todos terminer <span id="resultat">0%</span></span>
 
     </div>
 
     <script>
-        var valider = $('#valider');
+        // var valider = $('#valider');
+        var i = 1;
+
+        $('#valider').click(function(event){
+            if (i % 5 === 0 ){
+                var txt = $("#txt").val();
+                var listTodo = $("#listTodo");
+    
+                var div = $('<div>');
+                div.text( i + ". " + txt);
+                $(listTodo).append(div);
+                $(div).css('color', '#00FF00');
+    
+                var checkbox = $('<input>').attr('type', 'checkbox');
+                $(div).prepend(checkbox);
+                // $(txt).val('');
+    
+            }else if (i % 2 === 0 ){
+                var txt = $("#txt").val();
+                var listTodo = $("#listTodo");
+    
+                var div = $('<div>');
+                div.text( i + ". " + txt);
+                $(listTodo).append(div);
+                $(div).css('color', 'red');
+    
+                var checkbox = $('<input>').attr('type', 'checkbox');
+                $(div).prepend(checkbox);
+                
+    
+            }else{
+                var txt = $("#txt").val();
+                var listTodo = $("#listTodo");
+    
+                var div = $('<div>');
+                div.text( i + ". " + txt);
+                $(listTodo).append(div);
+                $(div).css('color', 'blue');
+    
+                var checkbox = $('<input>').attr('type', 'checkbox');
+                $(div).prepend(checkbox);
+            }
+            i++;
+            $('#txt').val('').select();
+        });
+
+        $(document).on('click', 'input[type="checkbox"]', function() {
+            var checkboxes = $('input[type="checkbox"]:checked');
+            var totalCheckboxes = $('input[type="checkbox"]').length;
+            var percentage = (checkboxes.length / totalCheckboxes) * 100;
+            var roundedPercentage = Math.round(percentage);
+            $('#resultat').html(roundedPercentage + '%');
+        });
     </script>
 </body>
 </html>
