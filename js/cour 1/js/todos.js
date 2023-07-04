@@ -121,7 +121,7 @@ bouton.addEventListener('click', () => {
         var random = Math.floor(Math.random()*11);
         console.log(random);
             
-        div.style.color = color[random];
+        // div.style.color = color[random];
 
 
         // if(div.style.color == "red"){

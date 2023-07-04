@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exemple d'exercice simple sur jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="exo3.js" defer></script>
+</head>
+<body style="background-color: gray;">
+  <h2>Formulaire de connexion</h2>
+  <form id="loginForm">
+    <label for="username">Nom d'utilisateur:</label>
+    <input type="text" id="username" name="username">
+
+    <label for="password">Mot de passe:</label>
+    <input type="password" id="password" name="password">
+
+    <input type="submit" value="Se connecter">
+  </form>
+  <p id="errorMessage"></p>
+
+  <script>
+    // re creation
+    var login = document.getElementById("loginForm");
+    
+    login.addEventListener('submit', (event) => {
+      var psedo = document.getElementById("username").value;
+      var mdp = document.getElementById("password").value;
+      var errer = document.getElementById("errorMessage");
+      
+      if(psedo === '' && mdp === ''){
+        event.preventDefault();
+        errer.innerHTML = "Merci de renplire tout les chant demander";
+      }else if(psedo === ''){
+        event.preventDefault();
+        errer.innerHTML = "Merci de renplire votre Nom dutilisater";
+      }else if(mdp === ''){
+        event.preventDefault();
+        errer.innerHTML = "Merci de renplire votre mots de passe";
+      }
+    })
+
+
+    //  Jquery
+    // $('#loginForm').submit(function(event){
+    //   var password = $('#password').val();
+    //   var username = $('#username').val();
+    //   var errorMessage = $('#errorMessage');
+
+    //   if (password === '' && username === ''){
+    //     event.preventDefault();
+    //     errorMessage.text("Merci de renplire tout les chant demander");
+    //   }else if (username === ''){
+    //     event.preventDefault();
+    //     errorMessage.text("Merci de renplire votre Nom dutilisater");
+    //   }else if (password === ''){
+    //     event.preventDefault();
+    //     errorMessage.text("Merci de renplire votre mots de passe");
+    //   }
+    // })
+
+    //  JS
+    // var loginForm = document.getElementById("loginForm");
+    
+    // loginForm.addEventListener('submit', (event) =>{
+    //   var username = document.getElementById("username").value;
+    //   var password = document.getElementById("password").value;
+    //   var errorMessage = document.getElementById("errorMessage");
+
+    //   if(password === '' && username === ''){
+    //     event.preventDefault();
+    //     errorMessage.innerHTML = "Merci de remplir tous les champs demandés";
+    //   }else if(username === ''){
+    //     event.preventDefault();
+    //     errorMessage.innerHTML = "Merci de renplire votre Nom dutilisater";
+    //   }else if(password === ''){
+    //     event.preventDefault();
+    //     errorMessage.innerHTML = "Merci de renplire votre mots de passe";
+    //   }
+    // })
+
+  </script>
+</body>
+</html>
+
+<!-- objectif afficher le message veuillez remplir tous les champs dans le paragraphe qui a l'id errorMessage -->
