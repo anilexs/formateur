@@ -4,14 +4,103 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/todos.css">
+    <!-- <link rel="stylesheet" href="css/todos.css"> -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Document</title>
+    <style>
+        body{
+            background-color: gray;
+        }
+
+        .form{
+            width: 50%;
+            margin: auto;
+            text-align: end;
+        }
+        #txt{
+            border-radius: 20px;
+            height: 50px;
+            width: 100%;
+        }
+        #listTodo{
+            width: 60%;
+            margin: auto;
+            border: 3px solid black;
+            border-radius: 5px;
+            min-height: 70px;
+            flex-wrap: wrap;
+            display: flex;
+        }
+        #listTodo > div{
+            margin: 30px;
+            width: 40%;
+        }
+        #valider{
+            margin-top: 20px;
+            font-size: 20px;
+            background-color: transparent;
+            height: 30px;
+            width: 100px;
+            border-radius: 10px;
+        }
+        #listTodo{
+            position: relative;
+        }
+        .Pourcentage{
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: 2px solid black;
+            font-size: 20px;
+            padding: 10px 30px;
+        }
+
+        body{
+            position: relative;
+        }
+        .sec{
+            display: none;
+        }
+        .sec1{
+            position: absolute;
+            background-color: rgb(42, 42, 42);
+            left: 80px;
+            height: 900px;
+            width: 90%;
+            z-index: 1;
+        }
+        #afichage{
+            display: flex;
+            justify-content: center;
+            width: 80%;
+            margin: auto;
+            font-size: 40px;
+            margin-top: 30px;
+            text-align: center;
+            z-index: 1;
+        }
+        #clos{
+            position: relative;
+        }
+        #back{
+            position: absolute;
+            top: 0px;
+            right: 0;
+        }
+    </style>
 </head>
 <body>
+    <div class="sec">
+        <div class="clos">
+            <button id="back">X</button>
+            <input type="text" disabled id="afichage" value="Tu as trouvé le premier easter egg.">
+        </div>
+
+    </div>
     <div class="form">
         <input id="txt" type="text" placeholder="entrez une todo"><br>
 
+        <!-- <button id="btn"></button> -->
         <input id="valider" type="submit" value="valider">
     </div>  
 
@@ -24,49 +113,66 @@
     <script>
         // var valider = $('#valider');
         var i = 1;
+        var sec = $('.sec');
+        var code = "alexispro";
 
         $('#valider').click(function(event){
-            if (i % 5 === 0 ){
-                var txt = $("#txt").val();
-                var listTodo = $("#listTodo");
-    
-                var div = $('<div>');
-                div.text( i + ". " + txt);
-                $(listTodo).append(div);
-                $(div).css('color', '#00FF00');
-    
-                var checkbox = $('<input>').attr('type', 'checkbox');
-                $(div).prepend(checkbox);
-                // $(txt).val('');
-    
-            }else if (i % 2 === 0 ){
-                var txt = $("#txt").val();
-                var listTodo = $("#listTodo");
-    
-                var div = $('<div>');
-                div.text( i + ". " + txt);
-                $(listTodo).append(div);
-                $(div).css('color', 'red');
-    
-                var checkbox = $('<input>').attr('type', 'checkbox');
-                $(div).prepend(checkbox);
-                
-    
+            var txt = $("#txt").val();
+            var listTodo = $("#listTodo");
+            
+            if (txt === ''){
+                event.preventDefault();
+            }else if(txt === code){
+                sec.removeClass('sec');
+                sec.addClass('sec1');
             }else{
-                var txt = $("#txt").val();
-                var listTodo = $("#listTodo");
-    
                 var div = $('<div>');
-                div.text( i + ". " + txt);
-                $(listTodo).append(div);
-                $(div).css('color', 'blue');
-    
-                var checkbox = $('<input>').attr('type', 'checkbox');
-                $(div).prepend(checkbox);
+                   div.text( i + ". " + txt);
+                   $(listTodo).append(div);
+                   if(i % 5 === 0){
+                       $(div).css('color', '#00FF00');
+                   }else if(i % 2 === 0 ){
+                       $(div).css('color', 'red');
+                   }else{
+                       $(div).css('color', 'blue');
+                   }
+       
+                   var checkbox = $('<input>').attr('type', 'checkbox');
+                   $(div).prepend(checkbox);
+                   $(txt).val('');
+               i++;
+               $('#txt').val('').select();
             }
-            i++;
-            $('#txt').val('').select();
         });
+        $(document).on('click', '#listTodo div', function() {
+          var color = $(this).css('color');
+                
+          switch (color) {
+            case 'rgb(0, 255, 0)':
+              $(this).css('color', 'black');
+              break;
+            case 'rgb(0, 0, 0)':
+              $(this).css('color', 'rgb(0, 255, 0)');
+              break;
+            case 'rgb(0, 0, 255)':
+              $(this).css('color', 'red');
+              break;
+            case 'rgb(255, 0, 0)':
+              $(this).css('color', 'blue');
+              break;
+            default:
+              // Do something if none of the cases match
+              break;
+          }
+        });
+
+        $('#back').click(() =>{
+            sec.removeClass('sec1');
+            sec.addClass('sec');
+             $('#txt').val('').select();
+        })
+
+
 
         $(document).on('click', 'input[type="checkbox"]', function() {
             var checkboxes = $('input[type="checkbox"]:checked');
