@@ -8,7 +8,6 @@
     }
 // 
 
-
 var submit = $('#submit');
 
 var valerSec1;
@@ -31,15 +30,14 @@ $(submit).click((event) => {
     var telephone = $('#telephone').val();
     var red = $('#red')
     if (email == '' || telephone == '' || nom == '' ||  $('#selec1').val() == 0 || $('#selec2').val() == 0){
-        // console.log("vide");
         event.preventDefault();
         errer.text("merci de renplire tout les chant de text");
     }else if (checkbox.prop('checked')) {
         var resultat = calcul(valerSec1 , valerSec2);
         var HT = resultat[0];
         var TTC = resultat[1];
-        totalHt.val("Prix hore Taxe " + HT)
-        totalTtc.val("Tout Taxe Compris " + TTC)
+        totalHt.val("Prix hore Taxe " + HT + "€")
+        totalTtc.val("Tout Taxe Compris " + TTC + "€")
         errer.text('');
         
 
@@ -49,10 +47,3 @@ $(submit).click((event) => {
         event.preventDefault();
     }
 })
-
-
-// else if(valer === 0 || valer2 === 0){
-//         // console.log("2");
-//         event.preventDefault();
-//         errer.text("merci de renplire tout les chant de text");
-//     }
