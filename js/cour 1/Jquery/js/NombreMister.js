@@ -5,6 +5,7 @@ var Propo = $('#Propo');
 var sms = $('#sms');
 var winner = $('.absoNoneWinner');
 var looser = $('.absoNoneLooser');
+var absoNoneSolu = $('.absoNoneSolu');
 
 
 var multiplicater = 51;
@@ -26,11 +27,11 @@ $(".selec").on("change", function() {
         multiplicater = 1001;
         rendom = Math.floor(Math.random() * multiplicater);
     }
-
     console.log(rendom);
 });
 var Essei = 7;
 $(".selec2").on("change", function() {
+    var NmTour = $('#NmTour')
     var NumEssei = $(this).val();
 
     if (NumEssei === "7") {
@@ -41,8 +42,10 @@ $(".selec2").on("change", function() {
         Essei = 15;
     }
 
+    $(NmTour).text(Essei);
     console.log(Essei);
 });
+
 console.log(rendom);
 $('#NouveauJeu').click(() => {
     tour = 1;
@@ -57,6 +60,8 @@ $('#NouveauJeu').click(() => {
 
     winner.removeClass('abso');
     winner.addClass('absoNoneWinner');
+    absoNoneSolu.removeClass('abso');
+    absoNoneSolu.addClass('absoNoneSolu');
     looser.removeClass('abso');
     looser.addClass('absoNoneLooser');
     console.log(rendom);
@@ -66,6 +71,8 @@ $('#Solution').click(() => {
     sms.val("le numero ete = " + rendom);
     $('#NouveauJeu').attr('disabled', false);
     $('#Propo, #Solution, #Proposer').attr('disabled', true);
+    absoNoneSolu.removeClass('absoNoneSolu');
+    absoNoneSolu.addClass('abso');
 });
 
 $('#Proposer').click(() => {
@@ -108,5 +115,38 @@ $('#Proposer').click(() => {
 
 
 // egg
-// var egg1 = $('#egg1');
-// $(egg1).click(() =>)
+var egg1 = $('#egg1');
+var clickCount = 0;
+var firstClickTime = 0;
+var resetTimeout;
+var egg1ActionNone = $('.egg1ActionNone');
+
+egg1.on("click", function() {
+  if (clickCount === 0) {
+    firstClickTime = new Date().getTime();
+  }
+  
+  clickCount++;
+  console.log(clickCount);
+  if (clickCount === 5 && new Date().getTime() - firstClickTime < 2000) {
+    //  action
+    egg1ActionNone.removeClass('egg1ActionNone');
+    egg1ActionNone.addClass('egg1Div');
+    
+    // fin action 
+    clearTimeout(resetTimeout); 
+    resetTimeout = setTimeout(function() {
+      clickCount = 0; 
+    }, 2000); 
+  } else if (clickCount === 5 || new Date().getTime() - firstClickTime >= 2000) {
+    clearTimeout(resetTimeout);
+    clickCount = 0;
+  }
+});
+
+
+
+$(btnXegg1).click(() => {
+    egg1ActionNone.removeClass('egg1Div');
+    egg1ActionNone.addClass('egg1ActionNone');
+});

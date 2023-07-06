@@ -1,0 +1,61 @@
+body{
+    background-color: gray;
+    text-align: center;
+}
+.div1 > input{
+    display: block;
+    margin: auto;
+    width: 1000px;
+    margin-top: 15px;
+    margin-bottom: 15;
+}
+.div2{
+    width: 1065px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+}
+.divTotal{
+    width: 1065px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+}
+.Toto{
+    margin: auto;
+    width: 470px;
+}
+select{
+    margin: auto;
+    width: 480px;
+}
+
+select, input, button{
+    border: 4px solid black;
+    border-radius: 10px;
+    font-size: 30px;
+}
+.div3{
+    text-align: start;
+    width: 1020px;
+    margin: auto;
+}
+.div4{
+    width: 1020px;
+    margin: auto;
+    text-align: end;
+}
+.div4 > button{
+    width: 480px;
+}
+button:hover{
+    background-color: gray;
+}
+label{
+    font-size: 25px;
+}
+
+#errer{
+    font-size: 50px;
+    color: red;
+}

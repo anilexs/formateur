@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/formReservation.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/formReservation.js" defer></script>
+    <title>Document</title>
+</head>
+<body>  
+    <h1>Formulaire de reservation</h1>
+    <div class="div1">
+        <input type="text" placeholder="nom" id="nom">
+        <input type="text" placeholder="email" id="email">
+        <input type="text" placeholder="telephone" id="telephone">
+    </div>
+    <div class="div2">
+        <select id="selec1">
+            <option value="0">choisir un plat</option>
+            <option value="15">thiebou dieune => 15 €</option>
+            <option value="12">salade de quinoa => 12 €</option>
+            <option value="11">sushi burger => 11 €</option>
+            <option value="9">filets de poulet panes => 9 €</option>
+        </select>
+        <select id="selec2">
+            <option value="0">choisir un desert</option>
+            <option value="15">churros maison => 15 €</option>
+            <option value="12">biscuits au pepites => 12 €</option>
+            <option value="11">buche de noel => 11 €</option>
+            <option value="9">gateau au fromage => 9 €</option>
+        </select>
+    </div>
+    <div class="divTotal">
+        <input type="text" placeholder="Total HT" disabled class="Toto" id="totalHt">
+        <input type="text" placeholder="ToTal TTC" disabled class="Toto" id="totalTtc">
+    </div>
+    <div class="div3">
+        <input type="checkbox" id="conditions">
+        <label for="conditions" id="red">J'accepte les conditions generales</label> <br>
+    </div>
+    <div class="div4">
+        <button id="submit">Valider ma command</button>
+    </div>
+    <div id="errer">
+
+    </div>
+</body>
+</html>
