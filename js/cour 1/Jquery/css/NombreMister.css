@@ -105,3 +105,8 @@ button{
     top: 0;
     right: 0;
 }
+
+.DigCod button{
+    width: 160px;
+    font-size: 80px;
+}
