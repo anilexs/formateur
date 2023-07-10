@@ -69,6 +69,63 @@ button{
 #rep{
     margin-left: 33px;
 }
+/* egg hdr */
+.badge{
+    width: 300px;
+}
+.badgeNone{
+    display: none;
+}
+.eggBadge1 {
+    position: absolute;
+    left: 55px;
+    animation: badge1 5s infinite;
+    /* forwards */
+}
+
+@keyframes badge1 {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.eggBadge2 {
+    position: absolute;
+    left: 55px;
+    bottom: 60px;
+    animation: badge2 5s infinite;
+    /* forwards */
+}
+
+@keyframes badge2 {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.eggBadge3 {
+    position: absolute;
+    right: 80px;
+    animation: badge3 5s infinite;
+    /* forwards */
+}
+
+@keyframes badge3 {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.eggBadge4 {
+    position: absolute;
+    right: 80px;
+    bottom: 60px;
+    border-radius: 50%;
+    animation: badge4 5s infinite;
+    /* forwards */
+}
+
+@keyframes badge4 {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 
 /* egg */
 .egg1{
@@ -109,4 +166,7 @@ button{
 .DigCod button{
     width: 160px;
     font-size: 80px;
+}
+.CodeValid{
+    display: none;
 }

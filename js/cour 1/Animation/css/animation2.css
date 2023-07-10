@@ -1,0 +1,31 @@
+body{
+    background-color: gray;
+}
+
+#carouselle{
+    position: relative;
+    background-image: url(../img/rogue_company.png);
+    width: 1200px;
+    margin: auto;
+    height: 675px;
+    background-size: cover;
+}
+#previous{
+    position: absolute;
+    top: 280px;
+    font-size: 80px;
+    width: 40px;
+    height: 40px;
+    opacity: 0.3;
+}
+#next{
+    position: absolute;
+    font-size: 80px;
+    top: 280px;
+    right: 2px;
+    font-size: 80px;
+    width: 40px;
+    height: 40px;
+    opacity: 0.3;
+
+}

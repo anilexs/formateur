@@ -105,8 +105,8 @@ $('#Proposer').click(() => {
             $(Propo).val('').select();
         }
         
-            tour++;
-    
+        
+        tour++;
         Propo.val('').select();
         rep.val(log);
 
@@ -115,6 +115,7 @@ $('#Proposer').click(() => {
 
 
 // egg
+var eggValu = 0;
 var egg1 = $('#egg1');
 var clickCount = 0;
 var firstClickTime = 0;
@@ -135,8 +136,24 @@ egg1.on("click", function() {
   console.log(clickCount);
   if (clickCount === 5 && new Date().getTime() - firstClickTime < 2000) {
     // Action
+    valu = '';
+    $('#codeInput').val('');
     egg1ActionNone.removeClass('egg1ActionNone');
     egg1ActionNone.addClass('egg1Div');
+
+    $('#val1').prop('disabled', false);
+    $('#val2').prop('disabled', false);
+    $('#val3').prop('disabled', false);
+    $('#val4').prop('disabled', false);
+    $('#val5').prop('disabled', false);
+    $('#val6').prop('disabled', false);
+    $('#val7').prop('disabled', false);
+    $('#val8').prop('disabled', false);
+    $('#val9').prop('disabled', false);
+    $('#valC').prop('disabled', false);
+    $('#val0').prop('disabled', false);
+    $('#valD').prop('disabled', false);
+    $('#startButton').prop('disabled', false);
 
     // Fin de l'action
     clearTimeout(resetTimeout);
@@ -145,7 +162,7 @@ egg1.on("click", function() {
       egg1ActionNone.removeClass('egg1Div');
       egg1ActionNone.addClass('egg1ActionNone');
       clearInterval(timerInterval); // Mettre en pause le chronomètre
-    }, 60000); // Compte à rebours d'une minute (60000 millisecondes)
+    }, 120000); // Compte à rebours d'une minute (60000 millisecondes)
 
     startTimer(120000); // Démarrer le chronomètre à 2 minutes (120000 millisecondes)
 
@@ -156,14 +173,35 @@ egg1.on("click", function() {
     clearInterval(timerInterval); // Mettre en pause le chronomètre
   }
 });
-
+var Badge1 = $('#Badge1');
 $('#startButton').click(function() {
   var codeInputValue = $('#codeInput').val();
 
   if (codeInputValue === '123') {
-    clearInterval(timerInterval); // Mettre en pause le chronomètre
-    // Autres actions à effectuer lorsque le code est valide
 
+
+    $('#val1').prop('disabled', true);
+    $('#val2').prop('disabled', true);
+    $('#val3').prop('disabled', true);
+    $('#val4').prop('disabled', true);
+    $('#val5').prop('disabled', true);
+    $('#val6').prop('disabled', true);
+    $('#val7').prop('disabled', true);
+    $('#val8').prop('disabled', true);
+    $('#val9').prop('disabled', true);
+    $('#valC').prop('disabled', true);
+    $('#val0').prop('disabled', true);
+    $('#valD').prop('disabled', true);
+    $('#egg1').prop('disabled', true);
+    $('#startButton').prop('disabled', true);
+    clearInterval(timerInterval);
+    
+    Badge1.removeClass('badgeNone');
+    Badge1.addClass('eggBadge1');
+    eggValu++;
+    egg1ActionNone.removeClass('egg1Div');
+    egg1ActionNone.addClass('egg1ActionNone');
+    
   } else {
     valu = '';
     $('#codeInput').val('');
