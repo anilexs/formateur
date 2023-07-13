@@ -39,15 +39,3 @@ $(document).ready(() =>{
     })
 })
 
-
-// setInterval(() =>{
-//     i++;
-//     if(i == img.length){
-//         i = 0;
-//     }
-//     $('#carouselle').css({
-//         backgroundImage: "url(../img/"+img[i]+")"
-        
-//     })
-// },2000)
-
