@@ -1,0 +1,18 @@
+nav{
+    background-color: gray;
+    border: 1px solid black;
+    min-height: 50px;
+    padding-top: 12px;
+}
+ul{
+    justify-content: space-around;
+    display: flex;
+    list-style-type: none;
+}
+.li{
+    padding-right: 200px;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
