@@ -1,31 +1,48 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Movie } from '../models/movie.model';
 
 @Component({
   selector: 'app-movie',
   templateUrl: './movie.component.html',
   styleUrls: ['./movie.component.css']
 })
-export class MovieComponent implements OnInit {
+export class MovieComponent{
+  @Input() movie!: Movie;
+  color: string = 'white';
+  nbLikes = 0
+  
+  likesPage(){
+    
+  }
   coeur() {
-    const bouton = document.getElementById('monBouton') as HTMLElement;
-    const couleur = bouton.style.backgroundColor;
-
-    if (couleur === 'red') {
-      this.likes++;
-    } else if (couleur === 'ffffff') {
-      this.likes--;
+    if (this.movie.bool == false) {
+      this.movie.likes++;
+      this.color = 'red';
+      this.nbLikes++;
+      this.movie.bool = true;
+    } else {
+      this.movie.likes--;
+      this.color = 'white';
+      this.nbLikes--;
+      this.movie.bool = false;
     }
   }
-  nam!: string;
-  description!: string;
-  likes!: number;
-  img!: string;
 
-  ngOnInit(): void {
-    this.nam = "your name";
-    this.description = "Mitsuha, adolescente coincée dans une famille traditionnelle, rêve de quitter ses montagnes natales pour découvrir la vie trépidante de Tokyo";
-    this.likes = 27;
-    this.img = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgU16Eb1oOkYQLlCTH0qrXZ3tYBuJlk7xvIA&usqp=CAU";
-  }
+  // nam!: string;
+  // description!: string;
+  // likes!: number;
+  // img!: string;
+  // nbLikes!: number;
+  // bool!: boolean;
+
+  // ngOnInit(): void {
+    // this.movie = new Movie(
+    //   "your name",
+    //   "Mitsuha, adolescente coincée dans une famille traditionnelle, rêve de quitter ses montagnes natales pour découvrir la vie trépidante de Tokyo",
+    //   27,
+    //   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgU16Eb1oOkYQLlCTH0qrXZ3tYBuJlk7xvIA&usqp=CAU",
+    //   0,
+    //   false
+    // );
+  // }
 }
-

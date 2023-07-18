@@ -1,13 +1,25 @@
+#heart{
+    position: absolute;
+    right: 0;
+}
+#licknb{
+    position: absolute; 
+    right: 60px;
+    top: 100px;
+}
 .film{
     padding: 20px;
     display: flex;
     width: 600px;
+    height: 310px;
     border: 1px solid white;
     margin-top: 30px;
 }
 img{
     display: block;
     border: 1px solid white;
+    width: 191px;
+    height: 260px;
 }
 h2{
     color: white;
@@ -19,7 +31,7 @@ p{
     margin: 20px 10px;
 }
 .p{
-    margin-top: 90px;
+    margin-top: 50px;
     display: flex;
     align-items: center;
     font-size: 30px;

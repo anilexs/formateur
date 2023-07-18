@@ -1,11 +1,18 @@
+<!-- <div class="lik">
+    <button (click)="likesPage()" id="heart" style="color: red;"><i class="fa-solid fa-heart"></i></button>
+    <div id="licknb">
+        <h2>{{nbLikes}}</h2>
+    </div>
+</div> -->
+
 <div class="film">
     <div>
-        <img [src]="img" alt="image">
+        <img [src]="movie.img" alt="image">
     </div>
     <div class="droite">
-        <h2>{{nam}}</h2>
-        <p>{{description}}</p>
-        <p class="p"><button (click)="coeur()"><i class="fa-solid fa-heart"></i></button>{{likes}} likes</p>
+        <h2>{{movie.nam}}</h2>
+        <p>{{movie.description}}</p>
+        <p class="p"><button (click)="coeur()" [style.color]="color"><i class="fa-solid fa-heart"></i></button>{{movie.likes}} likes</p>
         
     </div>
 </div>
