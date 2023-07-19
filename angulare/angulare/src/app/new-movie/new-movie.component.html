@@ -1,1 +1,12 @@
-<p>new-movie works!</p>
+<div class="new">
+ <form (ngSubmit)="submitForm()">
+ <label for="title">Titre</label> <br>
+ <input type="text" id="title" name="title" [(ngModel)]="title" required> <br>
+ <label for="description">Description</label> <br>
+ <textarea id="description" name="description" [(ngModel)]="description"
+required></textarea> <br>
+ <label for="url">URL</label> <br>
+ <input type="text" id="url" name="url" [(ngModel)]="url" required> <br>
+ <button type="submit">Envoyer</button>
+ </form>
+</div>

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RoutingModule } from './router.module';
+import { FormsModule } from '@angular/forms';
+import { NewMovieComponent } from './new-movie/new-movie.component';
 
 import { AppComponent } from './app.component';
 import { MoncomposantComponent } from './moncomposant/moncomposant.component';
@@ -16,11 +18,13 @@ import { HomePageComponent } from './home-page/home-page.component';
     NavbarComponent,
     MovieComponent,
     MovieListComponent,
-    HomePageComponent
+    HomePageComponent,
+    NewMovieComponent
   ],
   imports: [
     BrowserModule,
-    RoutingModule
+    RoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

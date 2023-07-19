@@ -13,6 +13,6 @@
         <h2>{{movie.nam}}</h2>
         <p>{{movie.description}}</p>
         <p class="p"><button (click)="coeur()" [style.color]="color"><i class="fa-solid fa-heart"></i></button>{{movie.likes}} likes</p>
-        
     </div>
+    <span [ngStyle]="{'font-size' : '2em'}"><i class="fa-solid fa-x"></i></span>
 </div>
