@@ -10,9 +10,10 @@
         <img [src]="movie.img" alt="image">
     </div>
     <div class="droite">
-        <h2>{{movie.nam}}</h2>
+        <h2>{{movie.nam | uppercase}}</h2>
         <p>{{movie.description}}</p>
         <p class="p"><button (click)="coeur()" [style.color]="color"><i class="fa-solid fa-heart"></i></button>{{movie.likes}} likes</p>
     </div>
-    <span [ngStyle]="{'font-size' : '2em'}"><i class="fa-solid fa-x"></i></span>
+    <p>{{movie.price | currency: 'EUR'}}</p> <!--- ligne a ameliore pour lafichage --->
+    <span (click)="remove()" [ngStyle]="{'font-size' : '2em'}"><i class="fa-solid fa-x"></i></span>
 </div>

@@ -7,6 +7,5 @@ import { Movie } from './models/movie.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  title = 'angulare';
+  laDate = new Date();
 }

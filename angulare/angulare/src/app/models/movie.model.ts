@@ -5,6 +5,8 @@ export class Movie {
         public img:string,
         public likes:number,    
         public bool:boolean,     
-        public id:Number     
+        public id:Number,
+        public price:number
+             
         ){}
     }

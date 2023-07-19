@@ -14,6 +14,7 @@ export class NewMovieComponent {
   title!: string;
   description!: string;
   url!: string;
+  price!:number;
 
   movie!:Movie;
   submitForm(){
@@ -23,7 +24,8 @@ export class NewMovieComponent {
       this.url,
       0,
       false,
-      this.serviceMovie.movies.length
+      this.serviceMovie.movies.length,
+      this.price
     );
     this.serviceMovie.movies.push(this.movie)
 

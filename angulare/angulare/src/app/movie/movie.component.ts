@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Movie } from '../models/movie.model';
+import { MovieService } from '../movie.service';
 
 @Component({
   selector: 'app-movie',
@@ -7,6 +8,9 @@ import { Movie } from '../models/movie.model';
   styleUrls: ['./movie.component.css']
 })
 export class MovieComponent{
+  constructor(private serviceMovie : MovieService){
+    
+  }
   @Input() movie!: Movie;
   color: string = 'white';
   nbLikes = 0
@@ -26,6 +30,12 @@ export class MovieComponent{
       this.nbLikes--;
       this.movie.bool = false;
     }
+  }
+  remove(){
+     const index = this.serviceMovie.movies.findIndex((film) => film.id === this.movie.id);
+    if (index !== -1) {
+      this.serviceMovie.movies.splice(index, 1);}
+
   }
 
   // nam!: string;

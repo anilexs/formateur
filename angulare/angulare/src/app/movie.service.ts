@@ -14,7 +14,8 @@ export class MovieService {
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgU16Eb1oOkYQLlCTH0qrXZ3tYBuJlk7xvIA&usqp=CAU",
           27,
           false,
-          1
+          1,
+          4.95
         ),
         new Movie(
           "miraculous",
@@ -22,7 +23,8 @@ export class MovieService {
           "https://fr.web.img3.acsta.net/c_310_420/pictures/23/04/03/15/05/1583867.jpg",
           95,
           false,
-          2
+          2,
+          7.75
         ),
         new Movie(
           "Sword Art Online: Ordinal Scale",
@@ -30,7 +32,8 @@ export class MovieService {
           "https://fr.shopping.rakuten.com/photo/1382786176.jpg",
           56,
           false,
-          3
+          3,
+          7.75
         ),
         new Movie(
           "Oshi no ko",
@@ -38,7 +41,8 @@ export class MovieService {
           "https://m.media-amazon.com/images/I/71Y8AWFyjoL._AC_UF1000,1000_QL80_.jpg",
           72,
           false,
-          4
+          4,
+          2
         ),
         new Movie(
           "LoliRock",
@@ -46,7 +50,8 @@ export class MovieService {
           "https://fusion.molotov.tv/arts/i/446x588/Ch8SHQoUAEtxHG6VqZZ9mfTZULDc_-l2VlMSA2pwZxgBCh8IARIbChTKfwpvZaJObn27Ib81OaidA-arbRIDcG5n/jpg",
           41,
           false,
-          5
+          5,
+          1
         ),
         new Movie(
           "Belle",
@@ -54,7 +59,8 @@ export class MovieService {
           "https://fr.web.img5.acsta.net/pictures/21/11/10/17/42/2106224.jpg",
           38,
           false,
-          6
+          6,
+          4.98
         ),
         new Movie(
           "Tokyo Mew Mew",
@@ -62,7 +68,8 @@ export class MovieService {
           "https://www.nautiljon.com/images/anime/00/25/tokyo_mew_mew_252.webp",
           17,
           false,
-          7
+          7,
+          1
         ),
         new Movie(
           "Kizuna no Allele",
@@ -70,7 +77,8 @@ export class MovieService {
           "https://www.nautiljon.com/images/anime/00/90/kizuna_no_allele_11009.webp",
           19,
           false,
-          8
+          8,
+          2
         ),
         new Movie(
           "Fairy Tail",
@@ -78,7 +86,8 @@ export class MovieService {
           "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/18638d44e180fd1b51870106b88e46e4.jpe",
           71,
           false,
-          9
+          9,
+          4
         ),
         new Movie(
           "suzume",
@@ -86,7 +95,8 @@ export class MovieService {
           "https://fr.web.img6.acsta.net/c_310_420/pictures/23/03/15/10/25/0882766.jpg",
           71,
           false,
-          10
+          10,
+          7.95
         ),
     ]
     }
